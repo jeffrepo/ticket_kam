@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="reporte_factura">
+            <t t-call="web.html_container">
+              <t t-set="data_report_margin_top" t-value="12"/>
+              <t t-set="data_report_header_spacing" t-value="9"/>
+              <t t-set="data_report_dpi" t-value="110"/>
+                <t t-foreach="docs" t-as="o">
+                        <div class="header">
+                        </div>
+
+                        <div class="page">
+                            <div style="text-align:center">
+                                <span t-esc="o.company_id.name"/>
+                            </div>
+                            <div style="text-align:center">
+                                <span t-esc="o.company_id.street"/>
+                                <t t-if="o.company_id.street2">
+                                    <span t-esc="o.company_id.street2"/>
+                                </t>
+                            </div>
+                            <div style="text-align:center">
+                                <span t-esc="o.company_id.city"/>,
+                                <span t-esc="o.company_id.state_id.name"/>
+                            </div>
+                            <div style="text-align:center">
+                                <span t-esc="o.company_id.city"/>,
+                                <span t-esc="o.company_id.state_id.name"/>
+                            </div>
+                            <div style="text-align:center">
+                                <span t-esc="o.company_id.name"/>
+                            </div>
+                            <div style="text-align:center">
+                                NIT: <span t-esc="o.company_id.vat"/>
+                            </div>
+                            <div style="text-align:center">
+                                ---------- DATOS DEL COMPRADOR ----------
+                            </div>
+                            <div style="text-align:left">
+                                NIT:
+                                <t t-if="o.partner_id.vat">
+                                    <span t-esc="o.partner_id.vat"/>
+                                </t>
+                                <t t-else="">
+                                  C/F
+                                </t>
+
+                            </div>
+
+                            <div style="text-align:left">
+                                Nombre: <span t-esc="o.partner_id.name"/>
+
+                            </div>
+                            <div style="text-align:center">
+                                DOCUMENTO TRIBUTARIO ELECTRONICO
+                            </div>
+                            <div style="text-align:center">
+                                FACTURA
+                            </div>
+                            <!-- <div style="text-align:center">
+                                <span t-esc="o.autorizacion"/>
+                            </div>
+                            <div style="text-align:center">
+                                SERIE: <span t-esc="o.serie"/> NUMERO: <span t-esc="o.serie"/>
+                            </div> -->
+
+                            <div style="text-align:left">
+                                FECHA EMISION: <span t-esc="o.date_invoice"/>
+                            </div>
+                            <div style="text-align:left">
+                                CAJERO: <span t-esc="o.user_id.name"/>
+                            </div>
+
+                            <div style="text-align:center">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td style="text-align:left">CAN</td>
+                                        <td style="text-align:left">DESCRIPCION</td>
+                                        <td style="text-align:right">TOTAL</td>
+                                    </tr>
+                                    <t t-foreach="o.invoice_line_ids" t-as="linea">
+                                        <tr>
+                                            <td style="text-align:left"><span t-esc="linea.quantity"/></td>
+                                            <td style="text-align:left"><span t-esc="linea.name"/></td>
+                                            <td style="text-align:right"><span t-esc="linea.price_total"/></td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td colspan="2">Total Llevar</td>
+                                        <td style="text-align:right"><t t-esc="o.amount_total"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+
+                        </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

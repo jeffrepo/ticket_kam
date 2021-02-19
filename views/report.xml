@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="ticket_kam_reporte_factura"
+            string="Factura Ticket"
+            model="account.invoice"
+            report_type="qweb-pdf"
+            file="ticket_kam.reporte_factura"
+            name="ticket_kam.reporte_factura"
+            paperformat="paperformat_ticket"
+        />
+
+    </data>
+</odoo>
