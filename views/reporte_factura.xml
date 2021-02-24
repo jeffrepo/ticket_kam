@@ -8,10 +8,14 @@
               <t t-set="data_report_dpi" t-value="110"/>
                 <t t-foreach="docs" t-as="o">
                         <div class="header">
+                          <div style="text-align:center">
+                              <img src="/web/binary/company_logo"/>
+                          </div>
                         </div>
 
                         <div class="page">
-                              <img src="/web/binary/company_logo" style="width:100%"/>
+
+                          <div style="height:2cm"/>
 
                             <div style="text-align:center">
                                 <span t-esc="o.company_id.name"/>
@@ -68,10 +72,10 @@
                                 FACTURA
                             </div>
                             <div style="text-align:center">
-                                <span t-esc="o.autorizacion"/>
+                                SERIE: <span t-esc="o.serie"/> NUMERO: <span t-esc="o.serie"/>
                             </div>
                             <div style="text-align:center">
-                                SERIE: <span t-esc="o.serie"/> NUMERO: <span t-esc="o.serie"/>
+                                <span t-esc="o.autorizacion"/>
                             </div>
                             <br/>
                             <br/>
@@ -94,12 +98,12 @@
                                         <tr>
                                             <td style="text-align:left"><span t-esc="linea.quantity"/></td>
                                             <td style="text-align:left"><span t-esc="linea.name"/></td>
-                                            <td style="text-align:right"><span t-esc="linea.price_total"/></td>
+                                            <td style="text-align:right"><span t-esc="linea.price_total"  t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"/></td>
                                         </tr>
                                     </t>
                                     <tr>
                                         <td colspan="2">Total Llevar</td>
-                                        <td style="text-align:right"><t t-esc="o.amount_total"/></td>
+                                        <td style="text-align:right"><t t-esc="o.amount_total"  t-options="{'widget': 'monetary', 'display_currency': user.company_id.currency_id}"/></td>
                                     </tr>
                                 </table>
                             </div>
