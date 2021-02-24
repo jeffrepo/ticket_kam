@@ -11,9 +11,9 @@
                         </div>
 
                         <div class="page">
-                          <div style="text-align:center">
-                              <img src="/web/binary/company_logo" style="width:50%"/>
-                          </div>
+
+                              <img src="/web/binary/company_logo" style="width:100%"/>
+
                             <div style="text-align:center">
                                 <span t-esc="o.company_id.name"/>
                             </div>
@@ -68,12 +68,12 @@
                             <div style="text-align:center">
                                 FACTURA
                             </div>
-                            <!-- <div style="text-align:center">
+                            <div style="text-align:center">
                                 <span t-esc="o.autorizacion"/>
                             </div>
                             <div style="text-align:center">
                                 SERIE: <span t-esc="o.serie"/> NUMERO: <span t-esc="o.serie"/>
-                            </div> -->
+                            </div>
                             <br/>
                             <br/>
                             <div style="text-align:left">
