@@ -4,7 +4,7 @@
         <report
             id="ticket_kam_reporte_factura"
             string="Factura Ticket"
-            model="account.invoice"
+            model="account.move"
             report_type="qweb-pdf"
             file="ticket_kam.reporte_factura"
             name="ticket_kam.reporte_factura"

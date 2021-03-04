@@ -7,7 +7,7 @@ class ReporteFactura(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        self.model = 'account.invoice'
+        self.model = 'account.move'
         docs = self.env[self.model].browse(docids)
 
         return {

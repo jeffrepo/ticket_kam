@@ -80,7 +80,7 @@
                             <br/>
                             <br/>
                             <div style="text-align:left">
-                                FECHA EMISION: <span t-esc="o.date_invoice"/>
+                                FECHA EMISION: <span t-esc="o.invoice_date"/>
                             </div>
                             <div style="text-align:left">
                                 CAJERO: <span t-esc="o.user_id.name"/>
